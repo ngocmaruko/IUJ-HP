@@ -1,0 +1,22 @@
+/* src/components/NewsList.css */
+.news-list {
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.news-list h2 {
+  font-size: 24px;
+}
+
+.news-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.news-list li {
+  margin-bottom: 20px;
+}
+
+.news-list h3 {
+  font-size: 18px;
+}
