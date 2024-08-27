@@ -4,13 +4,15 @@ import Slideshow from './components/Slider/Slideshow';
 import InquiryForm from './components/InquiryForm/InquiryForm';
 import NewsList from './components/NewsList/NewsList';
 import Navbar from './components/Navbar/Navbar';
+import Describe from './components/Describe/Describe';
 
 const App = () => {
     return (
         <div className="App">
             <Navbar />
             <Slideshow />
-            <NewsList /> {/* Add the NewsList component here */}
+            <Describe />
+            <NewsList />
         </div>
     );
 };
