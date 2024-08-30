@@ -1,0 +1,140 @@
+.web-des {
+  max-width: 600px;
+  /* Limit width of the container */
+  margin: 0 auto;
+  /* Center the container horizontally */
+  width: 90%;
+}
+
+.lineTrigger {
+  position: relative;
+  margin: 30px 0;
+  /* Space before and after the box */
+}
+
+
+.box {
+  position: relative;
+  padding: 20px;
+  background: black;
+  overflow: hidden;
+  box-sizing: border-box;
+  text-align: center;
+  /* Center the text horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  /* Adjust dynamically with content */
+}
+
+.text {
+  position: relative;
+  z-index: 1;
+  font-size: 18px;
+  line-height: 1.5;
+  opacity: 0;
+  /* Start invisible */
+  transition: opacity 0.3s ease;
+  /* Faster opacity transition */
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid transparent;
+  /* 1px border width */
+  background: linear-gradient(to right, white 100%, transparent 0) top left no-repeat,
+    linear-gradient(to bottom, white 100%, transparent 0) top right no-repeat,
+    linear-gradient(to left, white 100%, transparent 0) bottom right no-repeat,
+    linear-gradient(to top, white 100%, transparent 0) bottom left no-repeat;
+  background-size: 0% 1px, 1px 0%, 0% 1px, 1px 0%;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  z-index: 2;
+  transition: background-size 0.3s ease;
+  /* Faster line drawing transition */
+}
+
+.lineanime .box::before {
+  animation: drawLine 2s linear forwards;
+  /* Faster line drawing */
+}
+
+@keyframes drawLine {
+  0% {
+    background-size: 0% 1px, 1px 0%, 0% 1px, 1px 0%;
+    /* Start with no visible lines */
+  }
+
+  25% {
+    background-size: 100% 1px, 1px 0%, 0% 1px, 1px 0%;
+    /* Draw top line */
+  }
+
+  50% {
+    background-size: 100% 1px, 1px 100%, 0% 1px, 1px 0%;
+    /* Draw top and right lines */
+  }
+
+  75% {
+    background-size: 100% 1px, 1px 100%, 100% 1px, 1px 0%;
+    /* Draw top, right, and bottom lines */
+  }
+
+  100% {
+    background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+    /* Complete all lines */
+  }
+}
+
+.lineanime .text {
+  animation: fadeInText 2s linear forwards;
+  /* Faster text fade-in */
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    /* Start invisible */
+  }
+
+  100% {
+    opacity: 1;
+    /* Fully visible when line drawing completes */
+  }
+}
+
+/* Ensure .des-content appears every time */
+.des-content {
+  opacity: 0;
+  font-size: 16px;
+  transition: opacity 0.3s ease;
+  /* Faster opacity transition */
+}
+
+.lineTrigger.lineanime+.des-content {
+  animation: fadeInContent 2s linear forwards;
+  /* Faster fade-in */
+}
+
+@keyframes fadeInContent {
+  0% {
+    opacity: 0;
+    /* Start invisible */
+  }
+
+  100% {
+    opacity: 1;
+    /* Fully visible */
+  }
+}
+@media screen and (max-width: 768px) {
+  .web-des {
+    width: 80%;
+  }
+}

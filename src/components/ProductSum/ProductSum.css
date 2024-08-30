@@ -1,0 +1,96 @@
+.product-sum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+}
+
+.product-sum-inner {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-sum-menu-wrap {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  width: 100%;
+  max-width: 960px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.product-sum-menu-wrap.reverse {
+  flex-direction: row-reverse;
+}
+
+.product-sum-menu-img {
+  flex: 0 0 47%;
+  margin-right: 60px;
+}
+
+.product-sum-menu-wrap.reverse .product-sum-menu-img {
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+.product-sum-img {
+  width: 100%;
+  height: auto;
+}
+
+.product-sum-menu-txt {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  text-align: left; /* Align text to the left */
+}
+
+.product-sum-menu-name {
+  margin-bottom: 10px;
+  border-bottom: 1px dotted #777777;
+  padding-bottom: 0.9rem;
+}
+
+.product-sum-info {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  row-gap: 20px;
+  column-gap: 15px;
+  margin-top: 10px;
+}
+
+.product-sum-info dt {
+  /*font-weight: bold;*/
+}
+
+.product-sum-info dd {
+  margin-left: 0;
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+  .product-sum-menu-wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-sum-menu-wrap.reverse {
+    flex-direction: column; /* Ensure reverse layout also stacks vertically */
+  }
+
+  .product-sum-menu-wrap.reverse .product-sum-menu-img, .product-sum-menu-img {
+    width: 100%; /* Make the image full width */
+    max-width: 400px; /* Optional: to limit the maximum width of the image */
+    margin: 0 0 20px 0; /* Add space below the image */
+  }
+
+  .product-sum-menu-txt {
+    width: 100%;
+  }
+
+  .product-sum-info {
+    grid-template-columns: 1fr 2fr; /* Adjust column ratio for better readability on smaller screens */
+  }
+}

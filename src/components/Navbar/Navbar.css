@@ -1,13 +1,37 @@
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d);
-  font-family: 'Poppins', sans-serif;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  box-shadow: none;
+  transition: padding 0.5s ease-in-out, background-color 0.5s ease-in-out, height 0.5s ease-in-out;
 }
 
+.navbar.scrolled {
+  padding: 25px 30px; /* Increased padding when scrolled */
+  /*background-color: rgba(0, 0, 0, 0.9);*/
+}
+
+nav.navbar .logo {
+  width: 157px;
+  transition: width 0.5s ease-in-out;
+}
+
+.navbar.scrolled .logo {
+  width: 200px; /* Increased logo size when scrolled */
+}
+
+
+nav.navbar .logo img {
+  width: 100%;
+  height: auto;
+}
 .logo a {
   font-size: 1.8rem;
   color: #fff;
@@ -31,7 +55,6 @@
   transition: all 0.4s ease-in-out;
 }
 
-/* Hamburger "X" transformation */
 .bar.open:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
 }
@@ -50,6 +73,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  margin: 50px 0;
 }
 
 .menu-item {
@@ -69,7 +93,7 @@
   color: #fdbb2d;
 }
 
-.arrow {
+.navbar .arrow {
   margin-left: 5px;
   border: solid #fff;
   border-width: 0 2px 2px 0;
@@ -83,7 +107,6 @@
   transform: rotate(-135deg);
 }
 
-/* Submenu Styling */
 .submenu {
   display: none;
   position: absolute;
@@ -123,7 +146,6 @@
   top: 30px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -150,9 +172,10 @@
 
   .menu-item {
     text-align: center;
+    margin: 10px 0;
   }
 
-  .submenu {
+  .menu-item.open .submenu {
     position: static;
     background-color: transparent;
     box-shadow: none;
@@ -166,4 +189,3 @@
     font-size: 1rem;
   }
 }
-

@@ -9,7 +9,7 @@ const NewsList = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await axios.get('https://hongo3.co.jp/wp-sub/wp-json/wp/v2/posts'); // Adjust the URL if needed
+                const response = await axios.get('https://hongo3.co.jp/wp-sub/wp-json/wp/v2/posts');
                 setPosts(response.data);
             } catch (error) {
                 console.error('Error fetching news posts:', error);

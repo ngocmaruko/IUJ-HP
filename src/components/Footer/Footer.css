@@ -1,0 +1,152 @@
+/*-----------------------
+footer
+------------------------*/
+.footer-container {
+  padding: 80px 0;
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  width: 100%;
+  text-align: center;
+}
+
+.logo-image img {
+  width: 92px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 540px) {
+  .logo-image img {
+    width: 80px;
+  }
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.footer-item {
+  text-align: center;
+  padding: 1% 2%;
+  width: 33.3333%;
+  border-right: 1px dotted #777777;
+  list-style: none;
+}
+
+.footer-item:nth-child(1) {
+  border-left: 1px dotted #777777;
+}
+
+.footer-jp-title {
+  font-weight: 500;
+  font-size: 24px; /* Desktop: 24px to 36px */
+  margin-bottom: 1rem;
+}
+
+.footer-en-title {
+  font-weight: 400;
+  font-size: 20px; /* Desktop: 20px to 28px */
+  margin-bottom: 1rem;
+}
+
+.footer-en-title small {
+  font-size: 16px; /* Smaller text within the heading */
+}
+
+.footer-description {
+  font-size: 16px; /* Desktop: 16px to 20px */
+}
+
+.footer-copy {
+  font-size: 14px; /* Desktop: 12px to 14px */
+  text-align: center;
+}
+
+.footer-copy::before {
+  content: "©";
+}
+
+@media (max-width: 540px) {
+  .footer-container {
+    padding: 55px 0 105px;
+  }
+  .footer-links {
+    display: none;
+  }
+
+  .footer-jp-title,
+  .footer-en-title {
+    font-size: 20px; /* Mobile: 20px to 30px */
+  }
+
+  .footer-en-title small {
+    font-size: 14px; /* Mobile: Smaller text */
+  }
+
+  .footer-description {
+    font-size: 14px; /* Mobile: 14px to 18px */
+  }
+
+  .footer-copy {
+    font-size: 12px; /* Mobile: 12px to 14px */
+  }
+}
+
+/*-----------------------
+CTA
+------------------------*/
+@media screen and (min-width: 541px) {
+  .cta {
+    display: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .cta {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    display: block !important;
+  }
+  .cta ul {
+    overflow: hidden;
+    width: 100%;
+    list-style: none;
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #ddd;
+  }
+  .cta ul li {
+    float: left;
+    width: 33.3333%;
+    border-right: 1px dotted #505050;
+  }
+  .cta ul li:last-child {
+    border-right: none;
+  }
+  .cta ul li a {
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    line-height: 1;
+    font-size: 16px; /* Desktop: 16px to 18px, Mobile: 16px to 18px */
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .cta ul li a i {
+    font-size: 1.6rem;
+    margin-right: 5px;
+  }
+}

@@ -1,0 +1,152 @@
+.product-container {
+  display: flex;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 30px 0px;
+  flex-direction: row;
+  gap: 40px; /* Gap between the slider and product info */
+}
+
+.product-slider {
+  flex: 1; /* Takes up 50% of the container space */
+  position: relative;
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.main-image img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.product-slider .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ccc;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.thumbnail-container {
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: auto;
+  margin-top: 10px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: auto;
+  cursor: pointer;
+  margin-right: 10px;
+  border: 2px solid transparent;
+}
+
+.thumbnail.active {
+  border: 2px solid red;
+}
+
+.product-info {
+  flex: 1; /* Takes up 50% of the container space */
+  display: flex;
+  flex-direction: column;
+}
+
+.product-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #e0be65;
+  font-weight: normal;
+}
+
+.info-columns {
+  display: flex; /* Horizontal layout */
+  flex-direction: row;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  margin-bottom: 20px;
+  overflow: hidden; /* Prevent overflow */
+}
+
+.info-column {
+  flex: 1 1 auto; /* Allow columns to grow and shrink */
+  min-width: 120px; /* Reduce minimum width to fit */
+  box-sizing: border-box; /* Include padding and border in width calculations */
+
+}
+
+.info-title {
+  font-size: 18px;
+  margin-top: 0;
+  color: #e0be65;
+  font-weight: normal;
+  margin: 0 0 5px;
+  border-bottom: 1px solid #eee;
+  padding-bottom:10px;
+}
+
+.info-text {
+  font-size: 16px;
+  margin: 5px 0;
+  margin-bottom: 30px;
+}
+
+.info-material {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.info-material-item {
+  margin-bottom: 5px;
+  display: inline-block;
+    margin: 10px 10px 0 0;
+    padding: 0 15px;
+    background: #f2f2f2;
+    color: #000;
+    font-size: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+  }
+
+  .product-slider {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .product-slider .arrow {
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  .product-info p {
+    font-size: 14px;
+  }
+
+  .info-columns {
+    flex-direction: row; /* Ensure columns stay horizontal */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Prevent horizontal scrolling */
+    gap: 10px; /* Adjust gap if necessary */
+  }
+
+  .info-column {
+    min-width: 120px; /* Adjust to fit better */
+  }
+}

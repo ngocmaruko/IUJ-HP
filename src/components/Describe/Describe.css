@@ -1,58 +1,104 @@
-.box-container {
-  position: relative;
-  width: 100%;
+.contain {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 30px auto;
+  color: white;
+  position: relative;
+  
+}
+.title-wrap{
+  text-align: center;
+}
+.tittle{
+  text-indent: 0.35rem;
+  display: block;
+    line-height: 1;
+    font-size: 2.6rem;
+    letter-spacing: 0.35rem;
+}
+.title-sub{
+  display: block;
+    margin-top: 1.5rem;
+}
+.title-sub span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15rem;
+  text-indent: 0.15rem;
+}
+.title-sub span:before {
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  margin-right: 10px;
+  background-color: #777777;
+  content: "";
+}
+.title-sub span:after {
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  margin-left: 10px;
+  background-color: #777777;
+  content: "";
+}
+.contact-container {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
   padding: 20px;
   box-sizing: border-box;
   overflow: hidden;
 }
 
-.box-svg {
+.contact-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  stroke: black;
-  stroke-width: 2;
+  height: 100%;
+  pointer-events: none;
+}
+
+.contact-svg rect {
   fill: none;
+  stroke: white; /* Updated color */
+  stroke-width: 1;
+  stroke-dasharray: 1420; /* Adjust as needed */
+  stroke-dashoffset: 1420;
+  transition: stroke-dashoffset 2s ease-in-out;
   shape-rendering: crispEdges;
   vector-effect: non-scaling-stroke;
-  stroke-linecap: square;
-  stroke-linejoin: miter;
-  stroke-dasharray: 2320; /* Adjust if needed */
-  stroke-dashoffset: 2320;
-  animation: none;
 }
 
-.box-container.animate .box-svg {
-  animation: draw-box 4s forwards;
+.contact-container.animate .contact-svg rect {
+  stroke-dashoffset: 0;
 }
 
-@keyframes draw-box {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-.text-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: black;
-  font-family: Arial, sans-serif;
+.contact-content {
+  position: relative;
   z-index: 1;
-  width: calc(100% - 40px); /* Account for padding */
-  padding: 0 20px; /* Adjust padding as needed */
-  box-sizing: border-box;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+  animation-delay: 1s; /* Adjust if needed */
 }
 
-.text-content h1 {
-  font-size: 24px; /* Adjust font size */
-  margin: 0 0 10px 0; /* Margin below heading */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
-
-.text-content p {
-  margin: 5px 0; /* Adjust margins */
-  font-size: 16px; /* Adjust font size */
+/*
+.des-content {
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 2s; 
 }
+*/

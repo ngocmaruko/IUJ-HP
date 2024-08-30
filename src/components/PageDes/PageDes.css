@@ -1,0 +1,105 @@
+.page-des {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Ensure equal height for both containers */
+  padding: 30px 0;
+  overflow: hidden;
+  flex-direction: row;
+}
+
+.text-container, .image-container {
+  flex: 1;
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  box-sizing: border-box;
+}
+
+.text-container {
+  animation: fadeInFromLeft 1s forwards;
+}
+.text-container-yoko{
+    position: relative;
+    margin: 0 auto;
+    line-height: 2.1;
+    max-width: 600px;
+    text-align: center;
+    padding: 30px;
+    margin-top: -60px;
+}
+.image-container {
+  animation: fadeInFromRight 1s forwards;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+@keyframes fadeInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-align: left;
+  margin: 0;
+  height: 18em;
+  line-height: 3;
+  letter-spacing: 0.2em;
+  text-orientation: upright;
+}
+
+@media (max-width: 768px) {
+  .page-des {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .image-container {
+    order: 1;
+    animation: fadeInFromLeft 1s forwards;
+    width: 100%;
+    max-height: none;
+  }
+
+  .text-container {
+    order: 2;
+    animation: fadeInFromRight 1s forwards;
+    width: 100%;
+    padding: 20px;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .vertical-text {
+    writing-mode: horizontal-tb;
+    margin: 0;
+    line-height: 2;
+    letter-spacing: 0.1em;
+    padding: 10px;
+    height: auto;
+  }
+  .text-container-yoko{
+    text-align: start;
+  }
+}
