@@ -13,83 +13,119 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #000;
   color: #fff;
-  line-height: 2;
+  line-height: 1.5;
+}
+a{
+  text-decoration: none;
+  color: inherit;
 }
 
 
+/* Base font size for the root element */
+html {
+  font-size: 16px; /* Default for desktop */
+}
 
-/* Base styles for the entire webpage */
-
-
-/* Body text */
-p, li {
-  font-size: 16px; /* Desktop: 16px to 18px, Mobile: 14px to 16px */
+/* Body Text */
+body {
+  font-size: 1rem; /* 1rem = 16px */
+  line-height: 1.5;
 }
 
 /* Headings */
 h1 {
-  font-size: 36px; /* Desktop: 24px to 36px, Mobile: 20px to 30px */
+  font-size: 2.5rem; /* 40px */
 }
 
 h2 {
-  font-size: 28px; /* Desktop: 20px to 28px, Mobile: 18px to 24px */
+  font-size: 2rem; /* 32px */
 }
 
 h3 {
-  font-size: 24px; /* Desktop: 18px to 24px, Mobile: 16px to 20px */
+  font-size: 1.75rem; /* 28px */
 }
 
-/* Subheadings */
 h4 {
-  font-size: 20px; /* Desktop: 16px to 20px, Mobile: 14px to 18px */
+  font-size: 1.5rem; /* 24px */
 }
 
-/* Small text */
-small, .small-text {
-  font-size: 14px; /* Desktop and Mobile: 12px to 14px */
+h5 {
+  font-size: 1.25rem; /* 20px */
 }
 
-/* Buttons and Links */
-a, button {
-  font-size: 18px; /* Desktop: 16px to 18px, Mobile: 16px to 18px */
-  text-decoration: none;
-  color: #fff;
+h6 {
+  font-size: 1rem; /* 16px */
 }
 
-/* Responsive adjustments */
-@media (max-width: 540px) {
-  body {
-    font-size: 14px; /* Mobile: 14px to 16px */
+/* Media Queries for Small Devices (Tablets, Mobiles) */
+
+/* Medium Devices (Tablets, 768px - 1024px) */
+@media only screen and (max-width: 1024px) {
+  html {
+      font-size: 15px; /* Reduce the base font size */
   }
 
   h1 {
-    font-size: 30px; /* Mobile: 20px to 30px */
+      font-size: 2.25rem; /* 33.75px */
   }
 
   h2 {
-    font-size: 24px; /* Mobile: 18px to 24px */
+      font-size: 1.875rem; /* 28.125px */
   }
 
   h3 {
-    font-size: 20px; /* Mobile: 16px to 20px */
+      font-size: 1.625rem; /* 26px */
   }
 
   h4 {
-    font-size: 18px; /* Mobile: 14px to 18px */
+      font-size: 1.375rem; /* 22px */
   }
 
-  .small-text {
-    font-size: 12px; /* Mobile: 12px to 14px */
+  h5 {
+      font-size: 1.125rem; /* 18px */
   }
 
-  a, button {
-    font-size: 16px; /* Mobile: 16px to 18px */
+  h6 {
+      font-size: 1rem; /* 16px */
   }
 }
 
+/* Small Devices (Mobiles, 320px - 767px) */
+@media only screen and (max-width: 767px) {
+  html {
+      font-size: 14px; /* Further reduce the base font size */
+  }
+
+  h1 {
+      font-size: 2rem; /* 28px */
+  }
+
+  h2 {
+      font-size: 1.75rem; /* 24.5px */
+  }
+
+  h3 {
+      font-size: 1.5rem; /* 21px */
+  }
+
+  h4 {
+      font-size: 1.25rem; /* 18px */
+  }
+
+  h5 {
+      font-size: 1rem; /* 16px */
+  }
+
+  h6 {
+      font-size: 0.875rem; /* 14px */
+  }
+}
+
+
+
 .title-wrap {
   text-align: center;
-  padding-top: 50px;
+  padding-top: 60px;
 }
 
 .title {
@@ -97,13 +133,14 @@ a, button {
   font-weight: 400;
   text-indent: 0.35rem;
   display: block;
-  line-height: 1;
   letter-spacing: 0.35rem;
+  margin-top: 60px;
 }
 
 .title-sub {
   display: block;
   margin-top: 1.5rem;
+  margin-bottom: 30px;
 }
 
 .title-sub span {
@@ -138,4 +175,9 @@ a, button {
   margin-left: 10px;
   background-color: #777777;
   content: "";
+}
+@media screen and (max-width: 767px) {
+.title-wrap{
+  padding-top: 0;
+}
 }

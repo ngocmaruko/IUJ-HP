@@ -7,15 +7,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding: 10px 30px;
   background-color: transparent;
   box-shadow: none;
   transition: padding 0.5s ease-in-out, background-color 0.5s ease-in-out, height 0.5s ease-in-out;
 }
 
 .navbar.scrolled {
-  padding: 25px 30px; /* Increased padding when scrolled */
-  /*background-color: rgba(0, 0, 0, 0.9);*/
+  padding: 15px 30px;
 }
 
 nav.navbar .logo {
@@ -24,7 +23,8 @@ nav.navbar .logo {
 }
 
 .navbar.scrolled .logo {
-  width: 200px; /* Increased logo size when scrolled */
+  width: 200px;
+  /* Increased logo size when scrolled */
 }
 
 
@@ -32,6 +32,7 @@ nav.navbar .logo img {
   width: 100%;
   height: auto;
 }
+
 .logo a {
   font-size: 1.8rem;
   color: #fff;
@@ -86,11 +87,6 @@ nav.navbar .logo img {
   padding: 10px 15px;
   font-size: 1rem;
   font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.menu-item a:hover {
-  color: #fdbb2d;
 }
 
 .navbar .arrow {
@@ -100,7 +96,7 @@ nav.navbar .logo img {
   display: inline-block;
   padding: 3px;
   transform: rotate(45deg);
-  transition: transform 0.3s ease;
+  transition: transform 0.6s ease;
 }
 
 .menu-item.open .arrow {
@@ -112,14 +108,16 @@ nav.navbar .logo img {
   position: absolute;
   top: 50px;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background: rgba(255, 255, 255, 0.2);
   padding: 15px 0;
-  border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   transition: all 0.4s ease;
   opacity: 0;
   visibility: hidden;
   z-index: 5;
+  list-style-type: none;
+  margin-top: 3px;
+  padding: 0;
 }
 
 .submenu li {
@@ -127,16 +125,23 @@ nav.navbar .logo img {
 }
 
 .submenu li a {
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 0.9rem;
   white-space: nowrap;
-  transition: background 0.3s ease;
+  letter-spacing: normal;
+  display: block;
+  text-decoration: none;
+  color: #eee;
+  padding: 12px 24px;
+  transition: all .3s;
+  text-align: center;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.4);
+}
+
+.submenu li:last-child a {
+  border-bottom: none;
 }
 
 .submenu li a:hover {
-  background-color: #fdbb2d;
-  color: #333;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .menu-item.open .submenu {
@@ -177,7 +182,7 @@ nav.navbar .logo img {
 
   .menu-item.open .submenu {
     position: static;
-    background-color: transparent;
+
     box-shadow: none;
     opacity: 1;
     visibility: visible;

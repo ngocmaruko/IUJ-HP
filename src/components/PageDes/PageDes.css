@@ -1,10 +1,12 @@
 .page-des {
   display: flex;
   justify-content: space-between;
-  align-items: stretch; /* Ensure equal height for both containers */
-  padding: 30px 0;
+  align-items: stretch; /* Ensure equal height for both containers */ 
   overflow: hidden;
   flex-direction: row;
+  margin-top: 30px;
+  position: relative;
+  padding: 0 70px;
 }
 
 .text-container, .image-container {
@@ -25,16 +27,17 @@
     max-width: 600px;
     text-align: center;
     padding: 30px;
-    margin-top: -60px;
 }
 .image-container {
   animation: fadeInFromRight 1s forwards;
+  height: 50vh;
 }
 
 .image-container img {
   max-width: 100%;
   height: auto;
-  object-fit: cover; /* Maintain aspect ratio */
+  object-fit: cover;
+
 }
 
 @keyframes fadeInFromLeft {
@@ -67,12 +70,16 @@
   line-height: 3;
   letter-spacing: 0.2em;
   text-orientation: upright;
+ 
 }
-
+.vertical-text h3, .text-container-yoko h3{
+ font-size: 1.25em;
+}
 @media (max-width: 768px) {
   .page-des {
     flex-direction: column;
     height: auto;
+    padding: 0;
   }
 
   .image-container {
@@ -101,5 +108,6 @@
   }
   .text-container-yoko{
     text-align: start;
+    margin-top: -60px;
   }
 }

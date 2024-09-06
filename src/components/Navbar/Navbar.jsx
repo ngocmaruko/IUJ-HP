@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import './Navbar.css';
+import { Link } from 'react-router-dom';
 
+import './Navbar.css';
 
 const Navbar = ({logo}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -55,12 +56,8 @@ const Navbar = ({logo}) => {
 
   const handleMenuItemClick = (index) => {
     if (isMobile) {
-      if (index !== null) {
-        setOpenSubmenuIndex(prev => (prev === index ? null : index));
-      } else {
-        setIsMenuOpen(false);
-        setOpenSubmenuIndex(null);
-      }
+      setIsMenuOpen(false);
+      setOpenSubmenuIndex(null);
     }
   };
 
@@ -84,7 +81,7 @@ const Navbar = ({logo}) => {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="logo">
-        <a href="/"><img src={logo} alt="Logo" /></a>
+        <Link to="/"><img src={logo} alt="Logo" /></Link>
       </div>
       <div className="hamburger" onClick={toggleMenu}>
         <div className={`bar ${isMenuOpen ? 'open' : ''}`}></div>
@@ -94,40 +91,48 @@ const Navbar = ({logo}) => {
       <ul className={`menu ${isMenuOpen ? 'open' : ''}`}>
         <li
           className={`menu-item ${openSubmenuIndex === 0 ? 'open' : ''}`}
-          onClick={() => handleMenuItemClick(0)}
+          onClick={() => handleSubmenuClick(0)}
           onMouseEnter={() => !isMobile && setOpenSubmenuIndex(0)}
           onMouseLeave={() => !isMobile && setOpenSubmenuIndex(null)}
         >
-          <a href="#">
+          <Link to="#">
             NMN <span className="arrow"></span>
-          </a>
-          <ul className={`submenu ${openSubmenuIndex === 0 ? 'open' : ''}`} onClick={(e) => e.stopPropagation()}>
-            <li><a href="/NMN23400">NMN23400</a></li>
-            <li><a href="#">新NMN 31200</a></li>
+          </Link>
+          <ul className={`submenu ${openSubmenuIndex === 0 ? 'open' : ''}`}>
+            <li onClick={() => handleMenuItemClick(0)}>
+              <Link to="/products/NMN23400">NMN23400</Link>
+            </li>
+            <li onClick={() => handleMenuItemClick(0)}>
+              <Link to="/products/NMN31200">新 NMN 31200</Link>
+            </li>
           </ul>
         </li>
         <li
           className={`menu-item ${openSubmenuIndex === 1 ? 'open' : ''}`}
-          onClick={() => handleMenuItemClick(1)}
+          onClick={() => handleSubmenuClick(1)}
           onMouseEnter={() => !isMobile && setOpenSubmenuIndex(1)}
           onMouseLeave={() => !isMobile && setOpenSubmenuIndex(null)}
         >
-          <a href="#">
+          <Link to="#">
             新 納豆精EX <span className="arrow"></span>
-          </a>
-          <ul className={`submenu ${openSubmenuIndex === 1 ? 'open' : ''}`} onClick={(e) => e.stopPropagation()}>
-            <li><a href="#">新・納豆精EX SKⅢPREMIUM 10000FU</a></li>
-            <li><a href="#">新 納豆精EX PREMIUM 5000FU</a></li>
+          </Link>
+          <ul className={`submenu ${openSubmenuIndex === 1 ? 'open' : ''}`}>
+            <li onClick={() => handleMenuItemClick(1)}>
+              <Link to="/products/Natto10000">新 納豆精EX SKⅢPREMIUM 10000FU</Link>
+            </li>
+            <li onClick={() => handleMenuItemClick(1)}>
+              <Link to="/products/Natto5000">新 納豆精EX PREMIUM 5000FU</Link>
+            </li>
           </ul>
         </li>
         <li className="menu-item" onClick={() => handleMenuItemClick(null)}>
-          <a href="#">新還元型CoQ10EX</a>
+          <Link to="/products/CoQ10EX">新 還元型CoQ10EX</Link>
         </li>
         <li className="menu-item" onClick={() => handleMenuItemClick(null)}>
-          <a href="#">新・歩行力EX</a>
+          <Link to="/products/hokoryoku">新 歩行力EX</Link>
         </li>
         <li className="menu-item" onClick={() => handleMenuItemClick(null)}>
-          <a href="#">お問い合わせ</a>
+          <Link to="/contact">お問い合わせ</Link>
         </li>
       </ul>
     </nav>

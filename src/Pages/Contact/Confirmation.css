@@ -1,0 +1,39 @@
+.confirmation {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.confirmation table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 30px;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.confirmation table tbody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.confirmation table tr {
+  display: flex;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.confirmation table th,
+.confirmation table td {
+  text-align: left;
+  padding: 0 0 0 10px;
+}

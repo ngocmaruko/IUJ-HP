@@ -67,7 +67,7 @@
 }
 
 .product-title {
-  font-size: 24px;
+  font-size: 1.5em;
   margin-bottom: 20px;
   color: #e0be65;
   font-weight: normal;
@@ -89,7 +89,7 @@
 }
 
 .info-title {
-  font-size: 18px;
+  font-size: 1em;
   margin-top: 0;
   color: #e0be65;
   font-weight: normal;
@@ -148,5 +148,8 @@
 
   .info-column {
     min-width: 120px; /* Adjust to fit better */
+  }
+  .info-title {
+    font-size: 1.25rem;
   }
 }

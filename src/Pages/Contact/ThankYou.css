@@ -1,0 +1,8 @@
+.thank-you {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;    /* Centers vertically */
+  text-align: center;     /* Centers the text inside the container */
+  flex-direction: column; /* Ensures content stacks vertically */
+  padding: 120px 0;
+}

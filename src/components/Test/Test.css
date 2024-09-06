@@ -31,7 +31,6 @@
 .text {
   position: relative;
   z-index: 1;
-  font-size: 18px;
   line-height: 1.5;
   opacity: 0;
   /* Start invisible */
@@ -112,7 +111,7 @@
 /* Ensure .des-content appears every time */
 .des-content {
   opacity: 0;
-  font-size: 16px;
+
   transition: opacity 0.3s ease;
   /* Faster opacity transition */
 }
@@ -135,6 +134,7 @@
 }
 @media screen and (max-width: 768px) {
   .web-des {
-    width: 80%;
+    /*width: 80%;*/
   }
+  
 }

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './Test.css'; // Import the CSS file for styles
+import FadeInUp from '../FadeInUp/FadeInUp';
 
 const Test = () => {
   useEffect(() => {
@@ -26,6 +27,7 @@ const Test = () => {
   }, []);
 
   return (
+    <FadeInUp delay={0}>
     <div className='web-des'>
         <div className="title-wrap">
         <h2 className='title'>WHAT IS IUJ?</h2>
@@ -48,6 +50,7 @@ const Test = () => {
         毎日続けて頂く製品こそ、最高品質の原料・最高のスタッフで皆様にご提供をすることが、IUJブランドの使命です。
       </p>
     </div>
+    </FadeInUp>
   );
 };
 
