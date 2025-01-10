@@ -2,7 +2,6 @@
 
 .main-content {
   position: relative;
-  padding: 20px;
   background-color: black; /* Adjust as needed */
   transition: opacity .5s ease-in;
   opacity: 0; /* Initially hidden */
@@ -10,4 +9,11 @@
 
 .main-content.visible {
   opacity: 1; /* Reveal content */
+}
+
+@media (max-width:760px) {
+  .main-content {
+    position: relative;
+    margin-top: 60px;
+  }
 }

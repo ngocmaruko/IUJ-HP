@@ -1,0 +1,82 @@
+.fade-enter {
+  opacity: 0; /* Start with opacity 0 */
+}
+.fade-enter-active {
+  opacity: 1; /* Fade to opacity 1 */
+  transition: opacity 300ms ease-in; /* Duration for the fade effect */
+}
+.fade-exit {
+  opacity: 1; /* Start with opacity 1 */
+}
+.fade-exit-active {
+  opacity: 0; /* Fade to opacity 0 */
+  transition: opacity 300ms ease-in; /* Duration for the fade effect */
+}
+
+/* Other CSS styles */
+.language-dropdown {
+  position: fixed; /* Fix the dropdown at the bottom left */
+  bottom: 20px; /* Distance from the bottom */
+  left: 20px; /* Distance from the left */
+  z-index: 9999; /* Ensure it appears above other content */
+}
+
+.dropdown-button {
+  padding: 10px 15px; /* Padding for the button */
+  background-color: white; /* Button background color */
+  color: black; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space between items */
+  width: 150px; /* Set a fixed width for the button */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle grey shadow */
+}
+
+.dropdown-content {
+  display: block; /* Show dropdown when isOpen is true */
+  position: absolute; /* Position dropdown content */
+  bottom: 40px; /* Position above the button */
+  left: 0; /* Align left with the button */
+  background-color: white; /* Background color */
+  min-width: 150px; /* Minimum width matches button width */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  z-index: 1; /* Ensure it appears above other content */
+}
+
+.dropdown-content a {
+  color: black; /* Text color */
+  padding: 12px 16px; /* Padding for items */
+  text-decoration: none; /* Remove underline */
+  display: flex; /* Use flexbox for item alignment */
+  align-items: center; /* Center items vertically */
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1; /* Hover effect */
+}
+
+.flag {
+  width: 24px; /* Set flag width */
+  height: 16px; /* Set flag height */
+  margin-right: 10px; /* Space between flag and text */
+}
+
+.arrow {
+  margin-left: 10px; /* Space between text and arrow */
+  transition: transform 0.3s; /* Smooth transition for rotation */
+}
+
+.dropdown-open .arrow {
+  transform: rotate(180deg); /* Rotate arrow when dropdown is open */
+}
+
+@media (max-width:760px) {
+  .language-dropdown {
+    bottom: 30px; /* Distance from the bottom */
+    left: 10px; /* Distance from the left */
+  }
+}

@@ -15,8 +15,6 @@ const CoQ10EX = () => {
   return (
     <div>
       <PageDes
-        title="PRODUCT"
-        subtitle="製品情報"
         verticalText={verticalText}
         imageSrc={CoQ10EXImage}
         horizontalTitle="コエンザイムQ10（CoQ10）について"

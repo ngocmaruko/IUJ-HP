@@ -12,8 +12,6 @@ const Natto5000 = () => {
   return (
     <div>
       <PageDes
-        title="CONCEPT"
-        subtitle="コンセプト"
         verticalText={verticalText}
         imageSrc={Natto5}
       />

@@ -22,7 +22,7 @@ const Describe = () => {
     <div className='contain'>
       <div className="title-wrap">
         <h2 className='title'>WHAT IS IUJ?</h2>
-        <h3 class="title-sub shippori"><span>IUJとは？</span></h3>
+        <h3 className="title-sub shippori"><span>IUJとは？</span></h3>
       </div>
       <div className={`contact-container ${isAnimating ? 'animate' : ''}`}>
         <svg className="contact-svg" viewBox="0 0 600 150">

@@ -22,6 +22,7 @@ const Footer = ({ logo }) => {
             </h5>
             <p className="footer-description">お気軽にお問い合わせください</p>
           </li>
+          {/*
           <li className="footer-item">
             <h4 className="footer-en-title">
               <small>TEL.</small>03-5840-8435
@@ -34,6 +35,7 @@ const Footer = ({ logo }) => {
             </h4>
             <p className="footer-description">大阪支社</p>
           </li>
+            */}
         </ul>
 
         <p className="footer-copy">Held, Ltd.</p>
@@ -44,6 +46,7 @@ const Footer = ({ logo }) => {
             <li>
               <Link to="/contact" alt="メールでお問い合わせ">メール</Link>
             </li>
+            {/*
             <li>
               <a href="tel:03-5840-8435">
                 <i className="fa-solid fa-square-phone"></i>
@@ -58,6 +61,7 @@ const Footer = ({ logo }) => {
                 大阪支社
               </a>
             </li>
+            */}
           </ul>
         </div>
       </div>

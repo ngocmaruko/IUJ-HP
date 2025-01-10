@@ -101,15 +101,15 @@ h6 {
   }
 
   h2 {
-      font-size: 1.75rem; /* 24.5px */
+      font-size: 1.5rem; /* 24.5px */
   }
 
   h3 {
-      font-size: 1.5rem; /* 21px */
+      font-size: 1.25rem; /* 21px */
   }
 
   h4 {
-      font-size: 1.25rem; /* 18px */
+      font-size: 1.05rem; /* 18px */
   }
 
   h5 {
@@ -125,7 +125,7 @@ h6 {
 
 .title-wrap {
   text-align: center;
-  padding-top: 60px;
+  padding-top: 30px;
 }
 
 .title {

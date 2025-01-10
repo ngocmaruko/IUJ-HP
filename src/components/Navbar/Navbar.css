@@ -8,13 +8,29 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
-  background-color: transparent;
+  background-color: hsl(0, 0%, 0%, 0.5);
   box-shadow: none;
-  transition: padding 0.5s ease-in-out, background-color 0.5s ease-in-out, height 0.5s ease-in-out;
+  transition: padding 0.5s ease-in-out, background-color 0.5s ease-in-out, height 0.5s ease-in-out, opacity 0.5s ease;
+  opacity: 1;
+  visibility: visible; 
 }
+.navbar.hidden {
+  opacity: 0; /* Fade out */
+  pointer-events: none; /* Disable interactions when hidden */
+  transition: opacity 0.5s ease, display 0s 0.5s; /* Delay hiding the display after opacity fades out */
+}
+.navbar.visible {
+  opacity: 1; /* Fully visible */
+  pointer-events: auto; /* Enable interactions when visible */
+}
+
 
 .navbar.scrolled {
   padding: 15px 30px;
+}
+
+.navbar.hidden {
+  transform: translateY(-100%); /* Move navbar out of view */
 }
 
 nav.navbar .logo {
@@ -24,17 +40,15 @@ nav.navbar .logo {
 
 .navbar.scrolled .logo {
   width: 200px;
-  /* Increased logo size when scrolled */
 }
-
 
 nav.navbar .logo img {
   width: 100%;
   height: auto;
 }
 
+
 .logo a {
-  font-size: 1.8rem;
   color: #fff;
   text-decoration: none;
   font-weight: 700;
@@ -74,7 +88,7 @@ nav.navbar .logo img {
   list-style: none;
   margin: 0;
   padding: 0;
-  margin: 50px 0;
+  margin: 30px 0;
 }
 
 .menu-item {
@@ -182,7 +196,6 @@ nav.navbar .logo img {
 
   .menu-item.open .submenu {
     position: static;
-
     box-shadow: none;
     opacity: 1;
     visibility: visible;

@@ -47,8 +47,8 @@ const Contact = () => {
     <FadeInUp delay={0}>
     <section className="info" id="sec-info">
       <div className="title-wrap">
-        <h2 className='title'>PRODUCT INFORMATION</h2>
-        <h3 className="title-sub"><span>商品情報</span></h3>
+        <h2 className='title'>CONTACT</h2>
+        <h3 className="title-sub"><span>お問い合わせ</span></h3>
       </div>
       
 

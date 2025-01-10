@@ -1,0 +1,13 @@
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+@media (max-width:760px) {
+  .video-container iframe{
+    width: 100%;
+  }
+}

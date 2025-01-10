@@ -1,0 +1,57 @@
+.purchase-wrapper {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e0be65 0%, #ff6600 100%); 
+  border: 2px solid #e0be65;
+  border-radius: 40px;
+  padding: 8px 10px;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 60px;
+  cursor: pointer;
+}
+
+
+.purchase-wrapper:hover {
+  transform: scale(1.05); /* Slightly scale up on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+
+.purchase-button {
+  /*background: linear-gradient(135deg, #e0be65 0%, #ff6600 100%); */
+  color: white; /* Text color */
+  padding: 12px 42px; /* Padding inside the button */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 18px; /* Font size for the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+
+/* Optional: Add a nice focus outline for accessibility */
+.purchase-button:focus {
+  outline: 2px solid #e0be65; /* Green outline for focus */
+}
+.base-text {
+  font-family: 'Arial', sans-serif; /* Use a distinct font */
+  font-weight: bold; /* Make it bold */
+  font-size: 20px; /* Increase the font size */
+  color: white; /* Text color */
+  background-color: #e0be65; /* Background color to contrast */
+  padding: 8px 16px; /* Padding around the text */
+  border-radius: 12px; /* Rounded corners */
+  text-align: center; /* Center the text */
+  margin-bottom: 10px; /* Spacing below the label */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  transition: transform 0.2s ease; /* Smooth transitions */
+}
+
+.base-text:hover {
+  transform: scale(1.05); /* Slightly scale up on hover */
+}

@@ -1,9 +1,10 @@
 import React from 'react';
 import './Product.css';
 import FadeInUp from '../FadeInUp/FadeInUp';
+import PurchaseButton from '../PurchaseButton/PurchaseButton';
 
 const Product = ({ product }) => {
-  const { title, images, content } = product;
+  const { title, images, content, purchaseLink } = product;
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const goToNextImage = () => {
@@ -49,7 +50,9 @@ const Product = ({ product }) => {
                 />
               ))}
             </div>
+             <PurchaseButton link={purchaseLink} />
           </div>
+          
           <div className="product-info">
             <h2 className="product-title">{title}</h2>
             <div className="info-columns">
@@ -82,9 +85,9 @@ const Product = ({ product }) => {
             <p className="info-text">{content.storage}</p>
             <h3 className="info-title">栄養成分情報</h3>
             <p className="info-text" dangerouslySetInnerHTML={{ __html: content.nutrition }} />
-            <h3 className="info-title">お召し上がり方</h3>
+            <h3 className="info-title">召し上がり方</h3>
             <p className="info-text">{content.usage}</p>
-            <h3 className="info-title">お取り扱いの注意</h3>
+            <h3 className="info-title">取り扱い上の注意</h3>
             <p className="info-text" dangerouslySetInnerHTML={{ __html: content.precautions }} />
           </div>
         </div>

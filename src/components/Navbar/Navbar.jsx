@@ -8,6 +8,7 @@ const Navbar = ({logo}) => {
   const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -30,12 +31,13 @@ const Navbar = ({logo}) => {
 
   useEffect(() => {
     const handleScroll = debounce(() => {
-      if (window.scrollY > 600) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    }, 10); // Adjust the debounce time for smoothness
+      // Only hide on desktop, always show on mobile
+      setIsNavbarVisible(!(window.scrollY > 600 && !isMobile));
+      
+      // Manage scrolled state for additional styling
+      setIsScrolled(window.scrollY > 600);
+    }, 10);
+    
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -79,7 +81,7 @@ const Navbar = ({logo}) => {
   }, [handleClickOutside]);
 
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isNavbarVisible ? 'visible' : 'hidden'}`}>
       <div className="logo">
         <Link to="/"><img src={logo} alt="Logo" /></Link>
       </div>
@@ -100,10 +102,10 @@ const Navbar = ({logo}) => {
           </Link>
           <ul className={`submenu ${openSubmenuIndex === 0 ? 'open' : ''}`}>
             <li onClick={() => handleMenuItemClick(0)}>
-              <Link to="/products/NMN23400">NMN23400</Link>
+              <Link to="/products/NMN23400">新NMN 23400 & MICROCLUSTER PREMIUM</Link>
             </li>
             <li onClick={() => handleMenuItemClick(0)}>
-              <Link to="/products/NMN31200">新 NMN 31200</Link>
+              <Link to="/products/NMN31200">NMN 31200 & MICROCLUSTER PREMIUM</Link>
             </li>
           </ul>
         </li>
@@ -114,22 +116,22 @@ const Navbar = ({logo}) => {
           onMouseLeave={() => !isMobile && setOpenSubmenuIndex(null)}
         >
           <Link to="#">
-            新 納豆精EX <span className="arrow"></span>
+            新納豆精EX <span className="arrow"></span>
           </Link>
           <ul className={`submenu ${openSubmenuIndex === 1 ? 'open' : ''}`}>
             <li onClick={() => handleMenuItemClick(1)}>
-              <Link to="/products/Natto10000">新 納豆精EX SKⅢPREMIUM 10000FU</Link>
+              <Link to="/products/Natto10000">新納豆精EX 10000FU SKⅢ PREMIUM</Link>
             </li>
             <li onClick={() => handleMenuItemClick(1)}>
-              <Link to="/products/Natto5000">新 納豆精EX PREMIUM 5000FU</Link>
+              <Link to="/products/Natto5000">新納豆精EX 5000FU</Link>
             </li>
           </ul>
         </li>
         <li className="menu-item" onClick={() => handleMenuItemClick(null)}>
-          <Link to="/products/CoQ10EX">新 還元型CoQ10EX</Link>
+          <Link to="/products/CoQ10EX">新還元型CoQ10EX</Link>
         </li>
         <li className="menu-item" onClick={() => handleMenuItemClick(null)}>
-          <Link to="/products/hokoryoku">新 歩行力EX</Link>
+          <Link to="/products/hokoryoku">新歩行力EX</Link>
         </li>
         <li className="menu-item" onClick={() => handleMenuItemClick(null)}>
           <Link to="/contact">お問い合わせ</Link>

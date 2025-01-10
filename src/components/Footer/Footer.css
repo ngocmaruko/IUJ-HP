@@ -1,8 +1,5 @@
-/*-----------------------
-footer
-------------------------*/
 .footer-container {
-  padding: 80px 0;
+  padding: 90px 0 30px;
   width: 90%;
   max-width: 1100px;
   margin: 0 auto;
@@ -17,16 +14,36 @@ footer
   width: 92px;
   margin-bottom: 30px;
 }
+.footer-jp-title {
+  position: relative;
+  display: inline-block; /* Ensures the element takes the width of its content */
+}
 
-@media (max-width: 540px) {
-  .logo-image img {
-    width: 80px;
+.footer-jp-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px; /* Border thickness */
+  background-color: #f0f0f0; /* Border color */
+  animation: slide-border 1s forwards; /* Animation for sliding the border */
+}
+
+@keyframes slide-border {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
   }
 }
 
+
+
 .footer-links {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 30px;
@@ -126,8 +143,6 @@ CTA
     border-top: 1px solid #ddd;
   }
   .cta ul li {
-    float: left;
-    width: 33.3333%;
     border-right: 1px dotted #505050;
   }
   .cta ul li:last-child {
@@ -140,7 +155,7 @@ CTA
     justify-content: center;
     color: #000;
     line-height: 1;
-    font-size: 16px; /* Desktop: 16px to 18px, Mobile: 16px to 18px */
+    font-size: 16px;
     font-weight: 600;
     text-decoration: none;
   }

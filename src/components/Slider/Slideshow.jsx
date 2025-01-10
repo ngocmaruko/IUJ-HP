@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import './Slideshow.css'; // Import your custom styles
+import './Slideshow.css';
 import NMN23400 from '../../assets/NMN_banner.jpg'
 import NMN31200 from '../../assets/NMN31200_banner.jpg'
 import Natto10000 from '../../assets/Natto10000_banner.jpg'

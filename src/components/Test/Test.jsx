@@ -31,7 +31,7 @@ const Test = () => {
     <div className='web-des'>
         <div className="title-wrap">
         <h2 className='title'>WHAT IS IUJ?</h2>
-        <h3 class="title-sub shippori"><span>IUJとは？</span></h3>
+        <h3 className="title-sub shippori"><span>IUJとは？</span></h3>
       </div>
       <div className="lineTrigger">
         <div className="box">

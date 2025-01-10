@@ -1,18 +1,18 @@
 import React from 'react';
 import './PageDes.css';
 
-const PageDes = ({ title, subtitle, verticalText, imageSrc, textContainerYoko }) => {
+const PageDes = ({verticalText, imageSrc, textContainerYoko }) => {
   return (
     <section>
       <div className="title-wrap">
-        <h2 className='title'>{title}</h2>
-        <h3 className="title-sub shippori"><span>{subtitle}</span></h3>
+        <h2 className='title'>CONCEPT</h2>
+        <h3 className="title-sub shippori"><span>コンセプト</span></h3>
       </div>
       <div className="page-des">
         <div className="text-container">
           <div className="vertical-text">
-            <h3>{verticalText.title}</h3>
-            <p>{verticalText.content}</p>
+            <h3 dangerouslySetInnerHTML={{__html: verticalText.title}}　/>
+            <p dangerouslySetInnerHTML={{__html: verticalText.content}}/>
           </div>
         </div>
         <div className="image-container">

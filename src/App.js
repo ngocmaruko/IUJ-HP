@@ -1,4 +1,5 @@
-import React from 'react';
+// App.js
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -15,18 +16,25 @@ import CoQ10EX from './Pages/Products/CoQ10EX';
 import Confirmation from './Pages/Contact/Confirmation';
 import ThankYou from './Pages/Contact/ThankYou';
 import Contact from './Pages/Contact/Contact';
-import ScrollToTop from './components/ScrollToTop'; // Import ScrollToTop
+import ScrollToTop from './components/ScrollToTop';
 import Hokoryoku from './Pages/Products/Hokoryoku';
-
+import LanguageSelector from './components/LanguageSelector/LanguageSelector';
+import BackToTop from './components/BackToTop/BackToTop';
 
 const App = () => {
+    const [isContentVisible, setIsContentVisible] = useState(false);
+
+    const handleSplashAnimationEnd = () => {
+        setIsContentVisible(true); 
+    };
+
     return (
         <Router basename="/IUJ">
             <div className="App">
                 <Navbar logo={logo} />
-                <ScrollToTop /> {/* Include ScrollToTop */}
+                <ScrollToTop />
                 <Routes>
-                    <Route path='/' element={<Home />} />
+                    <Route path='/' element={<Home onSplashEnd={handleSplashAnimationEnd} />} />
                     <Route path='/products/NMN23400' element={<NMN23400 />} />
                     <Route path='/products/NMN31200' element={<NMN31200 />} />
                     <Route path='/products/Natto10000' element={<Natto10000 />} />
@@ -37,6 +45,8 @@ const App = () => {
                     <Route path="/confirmation" element={<Confirmation />} />
                     <Route path="/thank-you" element={<ThankYou />} />
                 </Routes>
+                {isContentVisible && <LanguageSelector />} {/* Show LanguageSelector after splash */}
+                <BackToTop />
                 <Footer logo={logo} />
             </div>
         </Router>

@@ -10,6 +10,9 @@
 .product-slider {
   flex: 1; /* Takes up 50% of the container space */
   position: relative;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: flex-start; /* Align elements at the start */
 }
 
 .image-wrapper {
@@ -85,7 +88,6 @@
   flex: 1 1 auto; /* Allow columns to grow and shrink */
   min-width: 120px; /* Reduce minimum width to fit */
   box-sizing: border-box; /* Include padding and border in width calculations */
-
 }
 
 .info-title {
@@ -112,11 +114,16 @@
 .info-material-item {
   margin-bottom: 5px;
   display: inline-block;
-    margin: 10px 10px 0 0;
-    padding: 0 15px;
-    background: #f2f2f2;
-    color: #000;
-    font-size: 12px;
+  margin: 10px 10px 0 0;
+  padding: 0 15px;
+  background: #f2f2f2;
+  color: #000;
+  font-size: 12px;
+}
+
+/* Positioning the button in the slider */
+.product-slider > button {
+  margin-top: auto;
 }
 
 /* Responsive Design */
@@ -130,6 +137,15 @@
     margin-bottom: 20px;
   }
 
+  .product-info {
+    order: 2;
+  }
+
+  .product-slider {
+    order: 1;
+    margin-bottom: 20px;
+  }
+
   .product-slider .arrow {
     font-size: 20px;
     padding: 8px;
@@ -140,16 +156,16 @@
   }
 
   .info-columns {
-    flex-direction: row; /* Ensure columns stay horizontal */
-    flex-wrap: nowrap; /* Prevent wrapping */
-    overflow: hidden; /* Prevent horizontal scrolling */
-    gap: 10px; /* Adjust gap if necessary */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    gap: 10px;
   }
 
   .info-column {
-    min-width: 120px; /* Adjust to fit better */
+    min-width: 120px;
   }
   .info-title {
-    font-size: 1.25rem;
+    /*font-size: 1.25rem;*/
   }
 }
