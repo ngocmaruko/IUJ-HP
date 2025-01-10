@@ -37,7 +37,7 @@ const BackToTop = () => {
   useEffect(() => {
     window.addEventListener('scroll', toggleVisibility);
     return () => window.removeEventListener('scroll', toggleVisibility);
-  }, [isVisible]); // Added isVisible as a dependency
+  }, []); // Empty dependency array ensures the effect runs only once
 
   return (
     <div>
