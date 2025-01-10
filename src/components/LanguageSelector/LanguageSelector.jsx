@@ -61,8 +61,6 @@ const LanguageSelector = () => {
         window.addEventListener('click', handleClickOutside);
         return () => window.removeEventListener('click', handleClickOutside);
     }, []);
-
-    // Language options array
     const languages = [
         { name: '日本語', code: 'ja', url: 'https://www.held.jp/IUJ/', flag: 'https://flagcdn.com/jp.svg' },
         { name: 'English', code: 'en', url: 'https://translate.google.com/translate?hl=en&sl=ja&tl=en&u=https://www.held.jp/IUJ/', flag: 'https://flagcdn.com/us.svg' },
