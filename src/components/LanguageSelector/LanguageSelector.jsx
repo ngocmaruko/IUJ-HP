@@ -94,17 +94,14 @@ const LanguageSelector = () => {
                     {isOpen && (
                         <div className="dropdown-content">
                             {languages.map(language => (
-                                <a 
-                                    href="#" // Use # to prevent default link behavior
+                                <button 
                                     key={language.code} 
-                                    onClick={(e) => {
-                                        e.preventDefault(); // Prevent default anchor behavior
-                                        selectLanguage(language); // Update selected language
-                                    }}
+                                    onClick={() => selectLanguage(language)} // Update selected language
+                                    className="dropdown-item"
                                 >
                                     <img src={language.flag} alt={`${language.name} Flag`} className="flag" />
                                     {language.name}
-                                </a>
+                                </button>
                             ))}
                         </div>
                     )}
