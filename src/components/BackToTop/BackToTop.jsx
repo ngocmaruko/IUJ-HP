@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { FaArrowUp } from 'react-icons/fa';
 import './BackToTop.css';
 
@@ -7,7 +7,7 @@ const BackToTop = () => {
   const [fadeClass, setFadeClass] = useState('');
 
   // Toggle button visibility based on scroll position
-  const toggleVisibility = () => {
+  const toggleVisibility = useCallback(() => {
     if (window.scrollY > 300) {
       if (!isVisible) {
         setIsVisible(true);
@@ -24,7 +24,7 @@ const BackToTop = () => {
         }, 300); // Match duration with CSS
       }
     }
-  };
+  }, [isVisible]);
 
   // Scroll to the top of the page when clicked
   const scrollToTop = () => {
@@ -37,7 +37,7 @@ const BackToTop = () => {
   useEffect(() => {
     window.addEventListener('scroll', toggleVisibility);
     return () => window.removeEventListener('scroll', toggleVisibility);
-  }, []); // Empty dependency array ensures the effect runs only once
+  }, [toggleVisibility]); // Added toggleVisibility to the dependency array
 
   return (
     <div>

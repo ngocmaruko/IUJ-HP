@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-
 import './Navbar.css';
 
-const Navbar = ({logo}) => {
+const Navbar = ({ logo }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -37,11 +36,10 @@ const Navbar = ({logo}) => {
       // Manage scrolled state for additional styling
       setIsScrolled(window.scrollY > 600);
     }, 10);
-    
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isMobile]); // Added isMobile to the dependency array
 
   const toggleMenu = () => {
     setIsMenuOpen(prev => !prev);
